@@ -27,6 +27,30 @@
     </div>
   </form>
 
+   <div class="row">
+      <div class="col-lg-6">
+
+        <ul>
+          {{range .tasks}}
+          <li>
+            {{if .IsDone}}
+              <form action="/Task/undone" autocomplete="on" method="post">
+              <span style="text-decoration:line-through">{{.Description}}</span>
+              <input type="hidden" name="taskId" value="{{.Id}}"/>
+               <button class="btn btn-default" type="submit">Undone</button>
+              </form>
+            {{else}}
+              <form action="/Task/done" autocomplete="on" method="post">
+              {{.Description}}
+              <input type="hidden" name="taskId" value="{{.Id}}"/>
+               <button class="btn btn-default" type="submit">Done</button>
+              </form>
+            {{end}}
+          </li>
+          {{end}}
+        </ul>
+      </div>
+    </div>
 </div>
 
 {{template "footer.html" .}}

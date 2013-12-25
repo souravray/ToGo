@@ -16,9 +16,9 @@ func (c Auth) Login(name string) revel.Result {
 		err!=nil && err!= gorm.RecordNotFound {
 		c.Flash.Error("Database unavailable")
 	} else {
-		// if c.Orm.NewRecord(user) {
-		// 	c.Orm.Save(&user)
-		// } 
+		if c.Orm.NewRecord(user) {
+			c.Orm.Save(&user)
+		} 
 		c.Session["user"] = name
 		c.Flash.Success("Welcome, " + name)
 		return c.Redirect(routes.Task.Index())
