@@ -3,7 +3,7 @@ import  (
     // "fmt"
     // "myapp/app/db"
     "github.com/robfig/revel"
-    // "myapp/app/models"
+    "myapp/app/routes"
 )
 
 type App struct {
@@ -11,5 +11,9 @@ type App struct {
 }
 
 func (c App) Index() revel.Result {
-    return c.Render()
+    if _, ok := c.Session["user"]; ok {
+        return c.Redirect(routes.Task.Index())
+    } else {
+        return c.Render()
+    }
 }

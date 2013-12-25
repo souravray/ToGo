@@ -17,7 +17,7 @@ func (c Task) Index() revel.Result {
 		if err:=c.Orm.Where("name = ?", username).First(&user).Error;  err==nil {
 			c.Orm.Model(&user).Related(&tasks)
 			user.Tasks = tasks
-			return c.Render(tasks)
+			return c.Render(user, tasks)
 		}
 	} 
    return c.Redirect(routes.App.Index())
