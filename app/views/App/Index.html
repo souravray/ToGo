@@ -1,12 +1,12 @@
 {{set . "title" "Home"}}
 {{template "header.html" .}}
 
-<header class="hero-unit" style="background-color:#A9F16C">
+<header class="hero-unit" style="background-color:#99DDFF">
   <div class="container">
     <div class="row">
       <div class="hero-text">
-        <h1>It works!</h1>
-        <p></p>
+        <h1>ToGo App</h1>
+        <p>It is a basic todo App, wriiten in Go and MySQL. This app is intened to evaluate Revel framework with GORM. By default the app will run in debug mode. You are free to copy, modify and redistibute this application.</p>
       </div>
     </div>
   </div>
@@ -17,6 +17,20 @@
     <div class="span6">
       {{template "flash.html" .}}
     </div>
+  </div>
+  <form action="/Auth/login" autocomplete="on" method="post">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input type="text" class="form-control" name="name">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">Go!</button>
+          </span>
+        </div><!-- /input-group -->
+      </div>
+    </div>
+  </form>
+    
   </div>
 </div>
 

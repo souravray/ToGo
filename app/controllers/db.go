@@ -10,7 +10,7 @@ import (
 
 var DB gorm.DB
 
-func init() {
+func Init() {
 
     var err error
     DB, err = gorm.Open("mysql", "root:admin@/togo")
@@ -40,8 +40,8 @@ func (c *ModelController) AddTables() r.Result {
 
 func (c *ModelController) EnterData() r.Result {
     user := models.User{
-        Name: "jitin",
-        Tasks: []models.Task{{Description: "Go for a walk.", IsDone: false}, {Description: "Write some go code", IsDone: false}},
+        Name: "Jitin",
+        Tasks: []models.Task{{Description: "Go for a walk.", IsDone: false}, {Description: "Write some Go code!", IsDone: false}},
     }
     c.Orm.Save(&user)
     return nil
