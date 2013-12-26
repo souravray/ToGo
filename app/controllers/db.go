@@ -5,7 +5,7 @@ import (
     "github.com/jinzhu/gorm"
      _ "github.com/go-sql-driver/mysql"
     r "github.com/robfig/revel"
-    "myapp/app/models"
+    "ToGo/app/models"
 )
 
 var DB gorm.DB

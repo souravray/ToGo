@@ -1,9 +1,7 @@
 package controllers
 import  (
-    // "fmt"
-    // "myapp/app/db"
     "github.com/robfig/revel"
-    "myapp/app/routes"
+    "ToGo/app/routes"
 )
 
 type App struct {

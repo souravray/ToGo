@@ -1,8 +1,8 @@
 package controllers
 import  (
     "github.com/robfig/revel"
-    "myapp/app/models"
-    "myapp/app/routes"
+    "ToGo/app/models"
+    "ToGo/app/routes"
     // "github.com/jinzhu/gorm"
 )
 
