@@ -1,6 +1,19 @@
 package app
 
-import "github.com/robfig/revel"
+import ( 
+	"github.com/robfig/revel"
+)
+
+// var MyFilter = func(c *revel.Controller, fc []revel.Filter) {
+// 	user:=models.User{}
+
+// 	if username, ok := c.Session["user"]; ok {
+// 		if err:=c.Orm.Where("name = ?", username).First(&user).Error;  err==nil {
+// 			fmt.Println("==== Inside My filter ======", c.Session["user"])
+// 		}
+// 	}
+// 	fc[0](c, fc[1:]) // Execute the next filter stage.
+// }
 
 func init() {
 	// Filters is the default set of global filters.
